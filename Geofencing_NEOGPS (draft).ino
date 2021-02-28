@@ -71,7 +71,7 @@ void checkDist()
     }
     else
     {
-      Serial.println("Subject within boundary, no worries!");
+      Serial.println("Subject within boundary");
     }
   }
 }
