@@ -1,2 +1,3 @@
-GPS reading-taking quite time to receive coordinates in home
-Lora frequency-
+GPS reading-take time to receive coordinates in home
+Geofence-distance difference calculated between home and subject position, sometimes, is incorrect
+Lora communication interval-take time to match frequency between gateway and node
