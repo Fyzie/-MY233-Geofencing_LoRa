@@ -1,0 +1,2 @@
+GPS reading-taking quite time to receive coordinates in home
+Lora frequency-
