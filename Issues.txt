@@ -1,3 +1,3 @@
 GPS reading-take time to receive coordinates in home
 Geofence-distance difference calculated between home and subject position, sometimes, is incorrect
-Lora communication interval-take time to match frequency between gateway and node
+Lora communication interval-node takes time to match frequency to the gateway
