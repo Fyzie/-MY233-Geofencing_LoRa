@@ -1,3 +1,2 @@
-GPS reading-take time to receive coordinates in home
-Geofence-distance difference calculated between home and subject position, sometimes, is incorrect
-Lora communication interval-node takes time to match frequency to the gateway
+GPS reading- bad reading under zinc roof
+Lora communication interval-node takes time to match frequency to the gateway (cant be real time)
