@@ -1,2 +1,5 @@
-GPS reading- bad reading under zinc roof
-Lora communication interval-node takes time to match frequency to the gateway (cant be real time)
+GPS reading - bad reading under zinc roof
+Lora communication interval - node takes time to match frequency to the gateway (cant be real time)
+
+Possible Improvement:
+1. Fasten the package delivery (control freq)
