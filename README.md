@@ -1,2 +1,7 @@
 # Geofencing_Band
-IMDC
+Innovate Malaysia Design Challenge (IMDC)
+
+Design Challenge 2: Digital Healthcare
+COVID-19 Mandatory Self-Quarantine Monitoring System
+
+A self-quarantine monitoring system that is capable of monitoring and reporting/flagging any non-adherence to the local authorities.
