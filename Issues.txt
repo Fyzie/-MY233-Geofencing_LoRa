@@ -3,3 +3,5 @@ Lora communication interval - node takes time to match frequency to the gateway 
 
 Possible Improvement:
 1. Fasten the package delivery (control freq)
+2. Input from user (for home position)
+3. Unique ID for each node
