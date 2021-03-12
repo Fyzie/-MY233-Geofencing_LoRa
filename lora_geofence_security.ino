@@ -13,7 +13,7 @@ NMEAGPS          gps; //create gps object
 gps_fix          fix; // current GPS fix/ holds latest value
 static const int RXPin = 4, TXPin = 3;
 SoftwareSerial ss(RXPin, TXPin);
-int z=1,a=0,b=0;
+int z=1,geofence=0,fuse=0;
 //change home position and boundary radius HERE!!
 NeoGPS::Location_t home( 58039880L, 1006621890L ); // home position (degrees * 10,000,000)
 const float thresholdDistance = 0.030;       // boundary radius (in km)
@@ -77,21 +77,19 @@ void do_send(osjob_t* j){
     if (gpsSeconds2 >= 20){
       gpsSeconds2 = 0;
       security_fuse(); 
-    }
-    
-    
+    } 
     if (gpsSeconds >= 3)
     {
       gpsSeconds = 0;
       displayInfo();
       checkDist();
-      if (a==1&& b==0)
+      if (geofence==1 && fuse==0)
       LMIC_setTxData2(1, incon, sizeof(incon)-1, 0);
-      else if (a==2 && b==0)
+      else if (geofence==2 && fuse==0)
       LMIC_setTxData2(1, outcon, sizeof(outcon)-1, 0);
-      else if (a==1&& b==1)
+      else if (geofence==1 && fuse==1)
       LMIC_setTxData2(1, indis, sizeof(indis)-1, 0);
-      else if (a==2 && b==1)
+      else if (geofence==2 && fuse==1)
       LMIC_setTxData2(1, outdis, sizeof(outdis)-1, 0);
       else
       LMIC_setTxData2(1, unknown, sizeof(unknown)-1, 0);
@@ -180,7 +178,7 @@ void displayInfo()
     lcd.setCursor(0,0);
     lcd.print("INVALID"); //ps: could be unclear sky
     delay(1000);
-    a=0;
+    geofence=0;
   }
 
 } //end displayInfo()
@@ -207,7 +205,7 @@ void checkDist()
       lcd.setCursor(0,1);
       lcd.print("beyond boundary");
       delay(2000);
-      a=2;
+      geofence=2;
     }
     else
     { 
@@ -217,7 +215,7 @@ void checkDist()
       lcd.setCursor(0,1);
       lcd.print("boundary");
       delay(3000);
-      a=1;
+      geofence=1;
     }
   }
 }
@@ -232,6 +230,6 @@ void security_fuse()
   if (detection == true)
   {
     digitalWrite(LED_BUILTIN, HIGH);  // sets the LED HIGH to indicate fuse is disconnected
-    b=1;
+    fuse=1;
   }
 }
