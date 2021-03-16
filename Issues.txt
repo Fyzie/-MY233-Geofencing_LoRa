@@ -1,4 +1,4 @@
-GPS reading - bad reading under zinc roof
+GPS reading - bad reading under zinc roof, otherwise, base accuracy: 3+ meters
 Lora communication interval - node takes time to match frequency to the gateway (cant be real time)
 
 Possible Improvement:
