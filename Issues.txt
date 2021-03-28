@@ -9,4 +9,4 @@ Next Development:
 Note:
 SLEEP MODE ->
 Average current used: 0.20 A
-Low power mode: 0.13 A - 0.17 A
+Low power mode: 0.13 A - 0.15 A
