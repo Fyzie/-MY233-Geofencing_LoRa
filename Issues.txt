@@ -1,15 +1,12 @@
 GPS reading - bad reading under zinc roof, otherwise, base accuracy: +-3 meters
 Lora communication interval - node takes time to match frequency to the gateway (cant be real time)
 
-Possible Improvement:
-1. Fasten the package delivery (control freq) : going to be edited in "lorabase.h" (for now, the node runs for 64 channels(902.3:0.2:914.9); 1(@907.5) out of 64 channels did sent the data)
+Next Development:
+1. Reduce freqeuency interval (control freq) : going to be edited in "lorabase.h" (for now, the node runs for 64 channels(902.3:0.2:914.9); 1(@907.5) out of 64 channels did sent the data)
 2. Input from user (for home position)
 3. Unique ID for each node : Device Address
 
 Note:
-FREQUENCY INTERVAL ->
-15 seconds each [for every transmit : 64 channels * 15 seconds = 960 seconds == it takes 16 minutes]
-
 SLEEP MODE ->
 Average current used: 0.20 A
 Low power mode: 0.13 A - 0.17 A
