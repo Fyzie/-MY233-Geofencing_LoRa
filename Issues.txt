@@ -8,7 +8,7 @@ Possible Improvement:
 
 Note:
 FREQUENCY INTERVAL ->
-15 seconds each (64 channels * 15 seconds = 960 seconds == 16 minutes)
+15 seconds each [for every transmit : 64 channels * 15 seconds = 960 seconds == it takes 16 minutes]
 
 SLEEP MODE ->
 Average current used: 0.20 A
