@@ -178,6 +178,12 @@ void loop()
   //myWatchdogEnable (0b100001);  // 8 seconds
   //myWatchdogEnable (0b100001);  // 8 seconds
   myWatchdogEnable (0b100000);  // 4 seconds
+  
+  /*int i;
+  for (i = 0; i <150; i++)
+  { 
+  myWatchdogEnable (0b100001);  // 8 seconds
+  }*/
 
   ss.begin(9600);
 }
