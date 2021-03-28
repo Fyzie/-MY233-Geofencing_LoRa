@@ -127,15 +127,21 @@ void checkDist()
       delay(3000);
     }
     delay(2000);
-      lcd.clear();
-      lcd.noBacklight();//To Power OFF the back light
-      ss.end();
-
-      //myWatchdogEnable (0b100001);  // 8 seconds
-      //myWatchdogEnable (0b100001);  // 8 seconds
-      myWatchdogEnable (0b100000);  // 4 seconds
-
-      ss.begin(9600);
+    lcd.clear();
+    lcd.noBacklight();//To Power OFF the back light
+    ss.end();
+    
+    //myWatchdogEnable (0b100001);  // 8 seconds
+    //myWatchdogEnable (0b100001);  // 8 seconds
+    myWatchdogEnable (0b100000);  // 4 seconds
+    
+    /*int i;
+    for (i = 0; i <150; i++)
+    { 
+      myWatchdogEnable (0b100001);  // 8 seconds
+    }*/
+    
+    ss.begin(9600);
 
   }
 }
