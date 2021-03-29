@@ -15,7 +15,7 @@ NMEAGPS          gps; //create gps object
 gps_fix          fix; // current GPS fix/ holds latest value
 static const int RXPin = 4, TXPin = 3;
 SoftwareSerial ss(RXPin, TXPin);
-int start = 1, geofence = 0, fuse = 0;
+int start = 1, geofence = 0, fuse = 0, transmit = 0;
 int i;
 
 //setup home position and boundary radius HERE!!
@@ -99,6 +99,7 @@ void do_send(osjob_t* j)
         lcd.setCursor(0, 1);
         Serial.println(LMIC.freq);
         lcd.print(LMIC.freq);
+        transmit++;
         delay(1000);
         start = 0;
       }
@@ -197,17 +198,21 @@ void loop()
     os_runloop_once();
   }
   flag_TXCOMPLETE = 0;
-  lcd.clear();
-  lcd.noBacklight();//To Power OFF the back light
-  ss.end();
-
-  for (i = 0; i < 150; i++)
+  if (transmit == 64)
   {
-    myWatchdogEnable (0b100001);  // 8 seconds
-    //myWatchdogEnable (0b100000);  // 4 seconds
-  }
+    lcd.clear();
+    lcd.noBacklight();//To Power OFF the back light
+    ss.end();
 
-  ss.begin(9600);
+    for (i = 0; i < 150; i++)
+    {
+      myWatchdogEnable (0b100001);  // 8 seconds
+      //myWatchdogEnable (0b100000);  // 4 seconds
+    }
+
+    ss.begin(9600);
+    transmit = 0;
+  }
 }
 
 void displayInfo()
