@@ -11,7 +11,7 @@ NMEAGPS          gps; //create gps object
 gps_fix          fix; // current GPS fix/ holds latest value
 
 SoftwareSerial ss(4, 3);
-
+int i;
 
 //change home position and boundary radius HERE!!
 NeoGPS::Location_t home( 58039880L, 1006621890L ); // home position (degrees * 10,000,000)
@@ -131,15 +131,11 @@ void checkDist()
     lcd.noBacklight();//To Power OFF the back light
     ss.end();
     
-    //myWatchdogEnable (0b100001);  // 8 seconds
-    //myWatchdogEnable (0b100001);  // 8 seconds
-    myWatchdogEnable (0b100000);  // 4 seconds
-    
-    /*int i;
     for (i = 0; i <150; i++)
     { 
+      //myWatchdogEnable (0b100000);  // 4 seconds
       myWatchdogEnable (0b100001);  // 8 seconds
-    }*/
+    }
     
     ss.begin(9600);
 
