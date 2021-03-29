@@ -98,8 +98,8 @@ void do_send(osjob_t* j)
         lcd.print("Frequency: ");
         lcd.setCursor(0, 1);
         Serial.println(LMIC.freq);
-        lcd.print(LMIC.freq);
         transmit++;
+        lcd.print(LMIC.freq);
         delay(1000);
         start = 0;
       }
