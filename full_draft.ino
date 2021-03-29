@@ -16,6 +16,7 @@ gps_fix          fix; // current GPS fix/ holds latest value
 static const int RXPin = 4, TXPin = 3;
 SoftwareSerial ss(RXPin, TXPin);
 int z = 1, geofence = 0, fuse = 0;
+int i;
 //change home position and boundary radius HERE!!
 NeoGPS::Location_t home( 58039880L, 1006621890L ); // home position (degrees * 10,000,000)
 const float thresholdDistance = 0.030;       // boundary radius (in km)
@@ -174,16 +175,12 @@ void loop()
   lcd.clear();
   lcd.noBacklight();//To Power OFF the back light
   ss.end();
-
-  //myWatchdogEnable (0b100001);  // 8 seconds
-  //myWatchdogEnable (0b100001);  // 8 seconds
-  myWatchdogEnable (0b100000);  // 4 seconds
   
-  /*int i;
   for (i = 0; i <150; i++)
-  { 
+  {
   myWatchdogEnable (0b100001);  // 8 seconds
-  }*/
+  //myWatchdogEnable (0b100000);  // 4 seconds
+  }
 
   ss.begin(9600);
 }
