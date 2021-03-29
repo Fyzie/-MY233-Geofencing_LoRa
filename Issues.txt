@@ -3,8 +3,8 @@ Lora communication interval - node takes time to match frequency to the gateway 
 
 Next Development:
 1. Reduce freqeuency interval (control freq) : going to be edited in "lorabase.h" (for now, the node runs for 64 channels(902.3:0.2:914.9); 1(@907.5) out of 64 channels did sent the data)
-2. Input from user (for home position)
-3. Unique ID for each node : Device Address
+2. Unique ID for each node : Device Address
+3. Manage sleep mode only after data transmission is successful (@907.5 Hz) 
 
 Note:
 SLEEP MODE ->
