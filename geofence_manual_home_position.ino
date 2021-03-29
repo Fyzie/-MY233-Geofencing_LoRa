@@ -51,6 +51,7 @@ void setup()
         lcd.setCursor(0,0);
         lcd.print( home.latF(), 6);
         lcd.setCursor(0,1);
+        lcd.print( home.lonF(), 6);
         delay(2000);
         got_home_pos = true;
       }
