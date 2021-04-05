@@ -1,7 +1,9 @@
 GPS reading - bad reading under zinc roof, otherwise, base accuracy: +-3 meters
 
 Next Development:
-1. 
+1. 3D case  
+2. Lipo battery (might need voltage regulator)  
+3. On switch
 
 Note:
 SLEEP MODE ->
