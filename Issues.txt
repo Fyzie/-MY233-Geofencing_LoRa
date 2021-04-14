@@ -1,11 +1,13 @@
-GPS reading - bad reading under zinc roof, otherwise, base accuracy: +-3 meters
+GPS reading - bad reading under zinc roof and high rise building, otherwise, base accuracy: +-3 meters
 
 Next Development:
 1. 3D case  
 2. Lipo battery (might need voltage regulator)  
 3. On switch
 
-Note:
-SLEEP MODE ->
-Average current used: 0.20 A
-Low power mode: 0.13 A - 0.15 A
+Note->
+CURRENT:
+Active: 0.24 A
+Idle: 0.20 A
+Battery capactity for 14 days: 67.2 Ah
+# need further reduction on power consumption
