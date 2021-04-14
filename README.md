@@ -9,5 +9,5 @@ A self-quarantine monitoring system that is capable of monitoring and reporting/
 
 # Version 1
 
-![b](https://user-images.githubusercontent.com/76240694/114643434-36d28e80-9d08-11eb-9bfa-a31e4c93f673.jpeg)
+<img src="https://user-images.githubusercontent.com/76240694/114643434-36d28e80-9d08-11eb-9bfa-a31e4c93f673.jpeg" width="700">
 
