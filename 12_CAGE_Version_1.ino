@@ -1,3 +1,9 @@
+/**************************************************************************
+ MY233
+ MUHAMMAD HAFIZI BIN ABDUL MALIK
+ GEOFENCING LOCATION TRACKING SYSTEM USING IOT AND LORA LPWAN FOR COVID19
+ MANDATORY SELF QUARANTINE MONITORING
+ *************************************************************************/
 #include <Arduino.h>
 #include <avr/sleep.h>
 #include <avr/wdt.h>
@@ -25,7 +31,7 @@ bool got_home_pos = false;
  edit boundary HERE!!
  geofence boundary can be adjusted to cater for different quarantine situations
 ***********************************************************************************************/
-const float thresholdDistance = 0.030;       // boundary radius (in km)
+const float thresholdDistance = 0.020;       // boundary radius (in km)
 
 uint8_t           gpsSeconds; // for counting elapsed time instead of using delay
 
@@ -59,7 +65,7 @@ static osjob_t initjob, sendjob, blinkjob;
 int FuseinPin = 7;    // pushbutton connected to digital pin 7
 bool Fuse_state = 0;      // variable to store the fuse-read value
 bool detection;
-int start = 1, geofence = 0, fuse = 0;
+int geofence = 0, fuse = 0;
 int i; int flag_TXCOMPLETE = 0;
 
 //const unsigned TX_INTERVAL = 10;
@@ -71,53 +77,28 @@ const lmic_pinmap lmic_pins = {
   .rst = 9,
   .dio = {2, 6, 7},
 };
-
-void do_send(osjob_t* j)
-{
-/***********************************************************************************************
- GPS READING
-***********************************************************************************************/
-  while (start == 1) {
-    while (gps.available( ss ))
-    {
-      lcd.backlight();//To Power ON the back light
-      fix = gps.read(); // read and save the latest gps value
-
-      // Instead of delay, count the number of GPS fixes
-      // check subject position for every gps read three times
-      gpsSeconds++;
-
-      security_fuse();
-
-      if (gpsSeconds >= 3)
-      {
-        gpsSeconds = 0;
-        displayInfo();
-        checkDist();
 /***********************************************************************************************
  STARTING DATA TRANSMISSION
 ***********************************************************************************************/
-        if (geofence == 1 && fuse == 0)
-          LMIC_setTxData2(1, incon, sizeof(incon) - 1, 0);
-        else if (geofence == 2 && fuse == 0)
-          LMIC_setTxData2(1, outcon, sizeof(outcon) - 1, 0);
-        else if (geofence == 1 && fuse == 1)
-          LMIC_setTxData2(1, indis, sizeof(indis) - 1, 0);
-        else if (geofence == 2 && fuse == 1)
-          LMIC_setTxData2(1, outdis, sizeof(outdis) - 1, 0);
-        else
-          LMIC_setTxData2(1, unknown, sizeof(unknown) - 1, 0);
-        lcd.clear();
-        lcd.setCursor(0, 0);
-        lcd.print("Frequency: ");
-        lcd.setCursor(0, 1);
-        lcd.print(LMIC.freq);
-        delay(1000);
-        start = 0;
-      }
-      break;
-    }
-  }
+void do_send(osjob_t* j)
+{
+  if (geofence == 1 && fuse == 0)
+    LMIC_setTxData2(1, incon, sizeof(incon) - 1, 0);
+  else if (geofence == 2 && fuse == 0)
+    LMIC_setTxData2(1, outcon, sizeof(outcon) - 1, 0);
+  else if (geofence == 1 && fuse == 1)
+    LMIC_setTxData2(1, indis, sizeof(indis) - 1, 0);
+  else if (geofence == 2 && fuse == 1)
+    LMIC_setTxData2(1, outdis, sizeof(outdis) - 1, 0);
+  else
+    LMIC_setTxData2(1, unknown, sizeof(unknown) - 1, 0);
+    //debugging
+    /*lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("Frequency: ");
+    lcd.setCursor(0, 1);
+    lcd.print(LMIC.freq);
+    delay(1000);*/
 }
 /***********************************************************************************************
  SUCCESSFUL DATA TRANSMISSION TO THE GATEWAY
@@ -126,7 +107,6 @@ void onEvent (ev_t ev)
 {
   flag_TXCOMPLETE = 1;
   //os_setTimedCallback(&sendjob, os_getTime()+sec2osticks(TX_INTERVAL), do_send);
-  start = 1;
 }
 /***********************************************************************************************
  SLEEP/ LOW POWER MODE
@@ -230,34 +210,53 @@ void setup()
 
 void loop()
 {
-  do_send(&sendjob);
+/***********************************************************************************************
+ GPS READING
+***********************************************************************************************/
+  while (gps.available( ss ))
+    {
+      lcd.backlight();//To Power ON the back light
+      fix = gps.read(); // read and save the latest gps value
+
+      // Instead of delay, count the number of GPS fixes
+      // check subject position for every gps read three times
+      gpsSeconds++;
+
+      security_fuse();
+
+      if (gpsSeconds >= 3)
+      {
+        gpsSeconds = 0;
+        displayInfo();
+        checkDist();
+        do_send(&sendjob);
 /***********************************************************************************************
 WAITING FOR SUCCESSFUL DATA TRANSMISSION
 start loop when data available
 end loop once data transmission is successful
 ***********************************************************************************************/
-  while (flag_TXCOMPLETE == 0)
-  {
-    os_runloop_once();
-  }
-  flag_TXCOMPLETE = 0;
-
-    lcd.clear();
-    lcd.noBacklight();//To Power OFF the back light
-    ss.end();
+        while (flag_TXCOMPLETE == 0)
+        {
+          os_runloop_once();
+        }
+        flag_TXCOMPLETE = 0;
+          
+        lcd.clear();
+        lcd.noBacklight();//To Power OFF the back light
+        ss.end();
 /***********************************************************************************************
 GOING TO SLEEP MODE
 sleep time can be adjusted (i = 0; i < XXX; i++)
 current experimental setup: (15*8 seconds) minutes == 2 minutes
 ***********************************************************************************************/
-    for (i = 0; i < 15; i++)
-    {
-      myWatchdogEnable (0b100001);  // 8 seconds
-      //myWatchdogEnable (0b100000);  // 4 seconds
+        for (i = 0; i < 15; i++)
+        {
+          myWatchdogEnable (0b100001);  // 8 seconds
+          //myWatchdogEnable (0b100000);  // 4 seconds
+        }
+        ss.begin(9600);
+      }
     }
-
-    ss.begin(9600);
- 
 }
 
 /***********************************************************************************************
