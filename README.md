@@ -1,4 +1,4 @@
-# Geofencing_Band
+# Geofencing_LoRa
 Innovate Malaysia Design Challenge (IMDC)
 
 Design Challenge 2: Digital Healthcare
