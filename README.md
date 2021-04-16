@@ -17,3 +17,7 @@ A self-quarantine monitoring system that is capable of monitoring and reporting/
 
 <img src="https://user-images.githubusercontent.com/76240694/114954547-6c54b480-9e8d-11eb-9e40-535de0ddcd4d.jpg" width="500">
 
+# Data Transmission  
+
+Data will be uploaded to Cloud Server (The Things Network) upon transmission.  
+<img src="https://user-images.githubusercontent.com/76240694/114954649-a1f99d80-9e8d-11eb-8c5a-27d3fccf1bd7.gif" width="500">
