@@ -33,5 +33,8 @@ Data will be uploaded to Cloud Server (The Things Network) upon transmission.
 # Version 2 (In progress)
 
 
-https://user-images.githubusercontent.com/76240694/114955350-1da81a00-9e8f-11eb-81fa-823b0663f902.mp4
+
+https://user-images.githubusercontent.com/76240694/114955464-56e08a00-9e8f-11eb-9f07-00e3f9e72f44.mp4
+
+
 
