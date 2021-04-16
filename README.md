@@ -15,7 +15,15 @@ A self-quarantine monitoring system that is capable of monitoring and reporting/
 
 # Flowchart  
 
-<img src="https://user-images.githubusercontent.com/76240694/114954547-6c54b480-9e8d-11eb-9e40-535de0ddcd4d.jpg" width="500">
+<img src="https://user-images.githubusercontent.com/76240694/114954547-6c54b480-9e8d-11eb-9e40-535de0ddcd4d.jpg" width="500">  
+
+# Demo  
+
+
+
+https://user-images.githubusercontent.com/76240694/114955083-70cd9d00-9e8e-11eb-9c00-4399dcce0e91.mp4
+
+
 
 # Data Transmission  
 
