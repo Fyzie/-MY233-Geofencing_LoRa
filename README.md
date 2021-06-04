@@ -40,7 +40,10 @@ Data will be uploaded to Cloud Server (The Things Network) upon transmission.
 
 Major component: TTGO T Beam ESP32  
 
-https://user-images.githubusercontent.com/76240694/114955464-56e08a00-9e8f-11eb-9f07-00e3f9e72f44.mp4  
+https://user-images.githubusercontent.com/76240694/114955464-56e08a00-9e8f-11eb-9f07-00e3f9e72f44.mp4
+
+
+
 ![21](https://user-images.githubusercontent.com/76240694/120767279-a406e100-c54d-11eb-9f11-08ce2bc03006.jpg)
 ![22](https://user-images.githubusercontent.com/76240694/120767307-ac5f1c00-c54d-11eb-9a41-d075d3006efb.jpg)
 ![23](https://user-images.githubusercontent.com/76240694/120767314-acf7b280-c54d-11eb-879b-3d5744b6e8c4.jpg)  
