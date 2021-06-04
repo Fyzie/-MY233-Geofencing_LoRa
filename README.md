@@ -45,9 +45,7 @@ https://user-images.githubusercontent.com/76240694/114955464-56e08a00-9e8f-11eb-
 ![22](https://user-images.githubusercontent.com/76240694/120767307-ac5f1c00-c54d-11eb-9a41-d075d3006efb.jpg)
 ![23](https://user-images.githubusercontent.com/76240694/120767314-acf7b280-c54d-11eb-879b-3d5744b6e8c4.jpg)  
 
-# Demo Video Link
 
-https://photos.app.goo.gl/RGD5X2c3J6yhAffP7
 
 
 
