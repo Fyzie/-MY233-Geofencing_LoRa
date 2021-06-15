@@ -1,13 +1,6 @@
 GPS reading - bad reading under zinc roof and high rise building, otherwise, base accuracy: +-3 meters
 
 Next Development:
-1. 3D case  
-2. Lipo battery (might need voltage regulator)  
-3. On switch
-
-Note->
-CURRENT:
-Active: 0.24 A
-Idle: 0.20 A
-Battery capactity for 14 days: 67.2 Ah
-# need further reduction on power consumption
+1. Alert for user nearby the boundary
+2. Wellness monitoring (temperature/ pulse sensing)
+3. Contact tracing
