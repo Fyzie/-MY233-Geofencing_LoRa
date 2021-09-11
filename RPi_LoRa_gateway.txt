@@ -1,0 +1,13 @@
+cd /home/pi
+git clone  https://github.com/tftelkamp/single_chan_pkt_fwd
+sudo raspi -config
+sudo shutdown -r now
+sudo apt-get install wiringpi
+cd ~/single_chan_pkt_fwd
+nano main.cpp
+______________________________________________________________________________________
+uint32)t freq = 907500000 //in MHz - depending LoRa node available freq
+#define SERVER1 "...." //based on connected internet server (wifi|mobile hotspot|...)
+______________________________________________________________________________________
+make
+sudo /home/pi/single_chan_pkt_fwd/single_chan_pkt_fwd

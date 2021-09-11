@@ -1,6 +1,0 @@
-GPS reading - bad reading under zinc roof and high rise building, otherwise, base accuracy: +-3 meters
-
-Next Development:
-1. Alert for user nearby the boundary
-2. Wellness monitoring (temperature/ pulse sensing)
-3. Contact tracing
