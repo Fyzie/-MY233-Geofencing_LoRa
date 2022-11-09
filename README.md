@@ -7,7 +7,7 @@ COVID-19 Mandatory Self-Quarantine Monitoring System
 
 A self-quarantine monitoring system that is capable of monitoring and reporting/flagging any non-adherence to the local authorities.
 
-Final program [here](https://github.com/Fyzie/Geofencing-Electronic-LoRa-Tracker/blob/main/17_CAGE_Version_2.ino)
+Final program [here](https://github.com/Fyzie/Geofencing-Electronic-LoRa-Tracker/blob/main/17_CAGE_Version_2.ino) for TTGO T Beam ESP32 LoRa GPS
 > 17_CAGE_Version_2.ino
 
 # Version 1
