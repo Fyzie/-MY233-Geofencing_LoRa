@@ -41,6 +41,11 @@ Data will be uploaded to Cloud Server (The Things Network) upon transmission.
 
 # Version 2
 
+## Important libraries
+- TinyGPS++
+- AXP202X_Library
+- ESP8266_and_ESP32_OLED_driver_for_SSD1306_displays
+
 Major component: TTGO T Beam ESP32  
 
 https://user-images.githubusercontent.com/76240694/114955464-56e08a00-9e8f-11eb-9f07-00e3f9e72f44.mp4
